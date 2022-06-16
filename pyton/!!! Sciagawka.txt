@@ -1,0 +1,63 @@
+"""
+     czy:   el. unikalne | kolejność | zmiana konkretnego el. | nowe elementy
+listy []       NIE           TAK             TAK                   TAK             list
+krotki ()      NIE           TAK             NIE                   NIE             tuple
+słowniki{k:v}  TAK           NIE             TAK                   TAK             directionary
+zbiory{}       TAK           NIE             NIE                   TAK             set
+
+        ZBIORY: BONUS w postaci | (wszystkie unikalne elementy z zbiorów) &(koniunkcja wspólne elementy) -(odjąć) ^ (alternatywa wykl)
+"""
+-------
+zamienianie listy w string metodą join =  'tu separator np spacja'.join(nazwa listy) example:
+lista = [Dupa, Kupa, Glupa] => ' '.join(lista) => 'Dupa Kupa Glupa'
+-------
+zamiana string w liste: 
+dupa = 'Czesc.kolego.co.u.ciebie' | x = dupa.split('.') | print(x) | ==> ['Czesc', 'kolego', 'co', 'u', 'ciebie']
+split - zamiana stringa w liste : nazwa_stringa.split('tu co jest separatorem?')
+--------
+sortowanie listy ascending // reverse=True jak cchemy descedngin
+sorted(nazwa_listy, syntax np reverse=True)
+
+------
+Zastosowanie for loop przykład każda pierwsza litera słowa w stringu capitalized:
+def nazwa_funkcji(string):
+    x = string.split(' ') # zamiana stringa w liste
+    for i in range (len(x)): # i in range len x np. 9 elementów w liscie = i iteruje 0>1>2>3>....>9
+        x[i] = x[i].capitalize() #1 iteracja x[0] = x[0].capitalize() funkcja capitalize powiększa pierwszą literę // #2 iteracja x[1] = x[1].capitalized()
+    return  ' '.join(x) # funkcja join scalająca LISTE w STRING, w tym przypadku separator to spacja
+------
+funkcja lambda (anonimowa funkcja), w przypadku gdy musimy użyć prostej funkcji tylko raz, lambda jest idealna
+przykładowa składnia
+lambda argument_funkcji_np_x: x % 2 == 0, nazwa_zmiennej_listy_etc
+------
+JSON
+ZAPIS
+json.dumps(data) - zapisuje dane do postaci Stringowej json
+json.dump(data, nameOfFile, ensure_ascii=False) - zapisuje dane do pliku w postaci json
+
+indent=4 - wciecia
+sort_keys=True - sortowanie alfabetyczne
+ensure_ascii=False --- znaki specjalne np polskie znaki
+
+ODCZYT
+json.loads(jsonstring) - przetwarza jsonstring na dane typu Python
+
+json.load(filePointer) - wczytuje json z pliku i zwraca jako wynik metody
+                        dane typu Python
+
+
+                                        GIT :
+====================================================================
+git init - w bashu gitowym
+Aby istniejacy katalog stał się repo GIT
+STAGE = przeznaczone do zapisu w repo do nastepnego commita
+git add .... - Dodaj pliki do commita (stagowanie) Argumenty = ' .  - ten katalog', ' .. - nad katalog (katalog wyzej)', 'sciezka wzgledna - dodanie do commita konkretnego pliku, git add -A - dodaj wszystko W REPO!'
+git rm - unstagowanie (usuwanie pliku z listy git add)
+git commit - zapisanie zestagowanych zmian lokalnie - historia zmian - 
+git log - log commitów
+git push - wyślij commity do githuba
+git rm --cached -r  folderName - usuń z githuba ale NIE Z LOKALNEJ MASZYNY!!!!!
+
+BRANCH - oddzielna wersja repo, służy do np wprowadzania nowych features bez ingerencji w main repo
+
+git branch nazwaBrancha - utworzenie branch o nazwie nazwaBrancha od ostatniego commita
