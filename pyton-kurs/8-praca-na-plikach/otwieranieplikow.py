@@ -32,7 +32,7 @@ seek - szuka (zmienia) - na miejsce wskazane przez nas
 '''
 
 
-with open('Oceany.txt', 'a+', encoding='UTF-8') as file:
+with open('pyton-kurs/8-praca-na-plikach/Oceany.txt', 'a+', encoding='UTF-8') as file:
     file.write('\nOcean Arka')
     file.seek(0)
     print(file.tell())
