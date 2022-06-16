@@ -60,4 +60,7 @@ git rm --cached -r  folderName - usuń z githuba ale NIE Z LOKALNEJ MASZYNY!!!!!
 
 BRANCH - oddzielna wersja repo, służy do np wprowadzania nowych features bez ingerencji w main repo
 
-git branch nazwaBrancha - utworzenie branch o nazwie nazwaBrancha od ostatniego commita
+git branch - lista istniejących branchów
+git branch nazwaBrancha - utworzenie branch o nazwie nazwaBrancha od ostatniego commita /// git branch -D nazwaBrancha - usuń branch o nazwie nazwaBrancha
+git checkout nazwaBrancha - przełączanie się pomiędzy branchami // master = main
+git pull - po zmergowaniu na githubie, aktualizacja lokalna?
