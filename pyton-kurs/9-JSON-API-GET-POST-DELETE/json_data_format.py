@@ -35,10 +35,10 @@ film = {
 encodedFilm = json.dumps(film, ensure_ascii=False, indent=4, sort_keys=True)
 print(encodedFilm)
 
-with open('sample.json', 'w', encoding='UTF-8') as file:
+with open('pyton-kurs/8-praca-na-plikach/sample.json', 'w', encoding='UTF-8') as file:
     json.dump(film, file, ensure_ascii=False, indent=4)
 
-with open('sample.json', encoding='UTF-8') as file:
+with open('pyton-kurs/8-praca-na-plikach/sample.json', encoding='UTF-8') as file:
     wynik = json.load(file)
 pprint.pprint(wynik)
 """

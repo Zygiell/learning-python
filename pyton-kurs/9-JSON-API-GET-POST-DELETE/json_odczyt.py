@@ -28,6 +28,6 @@ encodedRetrievedMovie = '{"title": "Ale ja nie będę tego robił!", "release_ye
 decodedM = json.loads(encodedRetrievedMovie)
 
 
-with open('sample.json', encoding='UTF-8') as file:
+with open('pyton-kurs/8-praca-na-plikach/sample.json', encoding='UTF-8') as file:
     wynik = json.load(file)
 print(wynik)

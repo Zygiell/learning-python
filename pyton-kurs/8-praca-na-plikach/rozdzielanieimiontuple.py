@@ -14,14 +14,14 @@ gdy nie ma podanego nazwiska w pliku imionanazwiska.txt, gdy bÄ™dziesz zapisywaÅ
 
 fullname = []
 
-with open('imionanazwiska.txt', 'r', encoding='UTF-8') as file:
+with open('pyton-kurs/8-praca-na-plikach/imionanazwiska.txt', 'r', encoding='UTF-8') as file:
     for lane in file:
         fullname.append(tuple(lane.strip().split(' ')))
 
-with open('imiona.txt', 'w', encoding='UTF-8') as file:
+with open('pyton-kurs/8-praca-na-plikach/imiona.txt', 'w', encoding='UTF-8') as file:
     for item in fullname:
         file.write(item[0] + '\n')
-with open('nazwiska.txt', 'w', encoding='UTF-8') as file:
+with open('pyton-kurs/8-praca-na-plikach/nazwiska.txt', 'w', encoding='UTF-8') as file:
     for item in fullname:
         try:
             file.write(item[1] + '\n')

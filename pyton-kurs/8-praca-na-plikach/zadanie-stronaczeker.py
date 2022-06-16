@@ -30,10 +30,10 @@ def websiteCheck(filename):
                     continue
 
                 else:
-                    with open('pyton/praca-na-plikach/working_websites.txt', 'a+', encoding='UTF-8') as file2:
+                    with open('pyton-kurs/8-praca-na-plikach/working_websites.txt', 'a+', encoding='UTF-8') as file2:
                         file2.write(line)
             except requests.exceptions.ConnectionError:
                 continue
 
 
-websiteCheck('pyton/praca-na-plikach/adresy.txt')
+websiteCheck('pyton-kurs/8-praca-na-plikach/adresy.txt')

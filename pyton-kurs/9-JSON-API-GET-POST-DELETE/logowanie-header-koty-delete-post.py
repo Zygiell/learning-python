@@ -9,7 +9,7 @@ def get_json_content_from_response(response):
     try:
         content = response.json()
     except json.decoder.JSONDecodeError:
-        print('niepoprawny format', r.text)
+        print('niepoprawny format')
     else:
         return content
 
