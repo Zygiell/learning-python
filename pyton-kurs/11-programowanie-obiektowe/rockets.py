@@ -1,10 +1,17 @@
+'''__getitem__ pobiera pozycje z planszy
+__setitem__ pozwala zmieniać.
+
+'''
+
 import random
+from math import sqrt
 
 
 class Rocket:
-    def __init__(self, speed=1):
+    def __init__(self, speed=1, rocketHeight=0, x=0):
         self.speed = speed
-        self.rocketHeight = 0
+        self.rocketHeight = rocketHeight
+        self.x = x
 
     def moveUp(self):
         self.rocketHeight += self.speed
@@ -24,3 +31,15 @@ class RocketBoard:
 
         for rocket in self.rockets:
             print(rocket)
+
+    def __getitem__(self, key):
+        return self.rockets[key]
+
+    def __setitem__(self, key, value):
+        self.rockets[key].rocketHeight = value
+
+    @staticmethod  # metoda statyczna bez selfa
+    def get_distance(rocket1, rocket2):
+        ab = abs(rocket1.rocketHeight - rocket2.rocketHeight)**2
+        bc = (rocket1.x - rocket2.x)**2
+        return sqrt(ab+bc)
