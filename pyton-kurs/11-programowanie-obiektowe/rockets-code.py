@@ -1,6 +1,6 @@
-from rockets import RocketBoard
+from rockets import RocketBoard, Rocket
 
-board = RocketBoard(3)
+board = RocketBoard(7)
 
-
-print(board.get_distance(board[0], board[1]))
+for r in board:
+    print(r)
