@@ -29,6 +29,7 @@ wspólne są w super klasie POTWÓR)
 '''
 accountMin = MinBalanceAccount(1500, 1000)
 
-result = accountMin.try_withdraw(501)
+result = accountMin.try_withdraw(1)
 
-print(result.message)
+if result.is_ok():
+    print(result.message)

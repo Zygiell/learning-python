@@ -3,13 +3,7 @@ Stwórz konto bankowe, do którego można deponować pieniądze oraz wypłacać 
 
 '''
 import random
-
-
-class Result:
-    def __init__(self, isSuccess, message, value=None):
-        self.isSuccess = isSuccess
-        self.message = message
-        self.value = value
+from result import Ok, Error
 
 
 class BankAccount:  # rodzic
@@ -23,9 +17,9 @@ class BankAccount:  # rodzic
     def try_withdraw(self, amount):
         if self.balance > amount:
             self.balance -= amount
-            return Result(True, "Money withdrawed",  amount)
+            return Ok("Money withdrawed",  amount)
         else:
-            return Result(False, "Not enough money",  self.balance)
+            return Error("Not enough money",  self.balance)
 
     def __str__(self):
         return str(self.balance)
@@ -46,10 +40,10 @@ class MinBalanceAccount(BankAccount):  # dziecko
                     f'You can only withdraw: {ifcounter}, do you want to do it? y - yes n - no')
                 if choice.lower() == 'y':
                     self.balance -= ifcounter
-                    return Result(True, "Money withdrawed",  ifcounter)
+                    return Ok("Money withdrawed",  ifcounter)
                 else:
-                    return Result(False, "Not enough money",  self.balance)
+                    return Error("Not enough money",  self.balance)
             else:
-                return Result(False, "Not enough money",  self.balance)
+                return Error("Not enough money",  self.balance)
         else:
             return super().try_withdraw(amount)
